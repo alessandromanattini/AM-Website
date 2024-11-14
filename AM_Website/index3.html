@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Swiper Test</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+  />
+  <style>
+    /* Add only essential styles */
+    body {
+      background: #000;
+      color: #fff;
+    }
+    .albums {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .albums h1 {
+      text-align: center;
+    }
+    .swiper-slide {
+      text-align: center;
+    }
+    .album-frame img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Swiper Album Carousel -->
+  <div class="albums">
+    <h1>Albums</h1>
+    <div class="swiper album-swiper">
+      <div class="swiper-wrapper">
+        <!-- Album Slide -->
+        <div class="swiper-slide">
+          <div class="album-frame">
+            <img src="album1.jpg" alt="Album 1" />
+          </div>
+          <h2>Album 1</h2>
+          <p>Artist 1</p>
+        </div>
+        <div class="swiper-slide">
+          <div class="album-frame">
+            <img src="album2.jpg" alt="Album 2" />
+          </div>
+          <h2>Album 2</h2>
+          <p>Artist 2</p>
+        </div>
+        <!-- Add more slides as needed -->
+      </div>
+      <!-- Add Pagination if needed -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Navigation if needed -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <script>
+    var albumSwiper = new Swiper('.album-swiper', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: '.albums .swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.albums .swiper-button-next',
+        prevEl: '.albums .swiper-button-prev',
+      },
+    });
+  </script>
+</body>
+</html>
